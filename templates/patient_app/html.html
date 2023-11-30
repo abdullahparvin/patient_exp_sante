@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta name = "viewport" content="width=divice-width, initial-scale=1.0">
+        <title> Welcome to santé</title>
+        <link rel="stylesheet" href= "{% static 'patient_app/style.css' %}">
+        
+    </head>
+    <body>
+        <div class = "container">
+            <!--<div class="navbar" >  -->
+                <nav> 
+                    <img src="logo.jpg" class="logo" >
+                    <ul>
+                        <li> <a href="hero" >Home </a></li>
+                        <li> <a href="hero" >about </a></li>
+                        <li> <a href="hero" >Contact Us</a></li>
+                    </ul>
+                    <button type = "button" id="loginButton">Log In</button>
+                    <script>
+                        document.getElementById("loginButton").addEventListener("click", function() {
+                            window.location.href = "{% url 'login' %}";
+                        });
+                    </script>
+                </nav>
+
+                <div class="content">
+                    {% if logout_message %}
+                        <div class="message">{{ logout_message }}</div>
+                    {% endif %}
+                    <h1><br>Welcome to sante</h1>
+                    <p> AI generative blah blah blah </p>
+                </div>
+
+                <div id="chat-container">
+                    <form name=" message" action=" ">
+                        <input name=" user" type="text" id="username"/>
+                        <input name="submitmsg" type="submit" id="submitmsg" value="send"/>
+                    <!-- <div class="chat-messages" id="chat-messages"> -->
+                    </form>
+                    </div>
+                    <!-- <div class="chat-input">
+                        <input type="text" id="message-input" placeholder="Type a message...">
+                        <button id="send-button">Send</button>
+                    </div> -->
+                </div>
+               
+                <!--<div class="toggle"></div> -->
+
+            </div>
+            
+            
+           
+            
+        </div>
+        
+                
+            </div>
+            </div>
+
+           
+
+  
+     </body>
+
+</html>

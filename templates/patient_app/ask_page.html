@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href= "{% static 'patient_app/style.css' %}">  
+</head>
+<body>
+    <div class = "container1">
+    <nav>
+        <a href="/"><img src="{% static 'patient_app/logo1.png' %}" class="logo" alt="Santé Logo"></a>
+        <!-- Other navigation links can be added here if needed -->
+    
+    <ul>
+        <li> <a href="/" >Home </a></li>
+        <li> <a href="/about" >about </a></li>
+        <li> <a href="/contact" >Contact Us</a></li>
+    </ul>
+</nav>
+<h1>Ask a Question</h1>
+<br> <br>
+<div style="text-align: center;">
+<form id="submission" action="/ask" method="post">
+  {%csrf_token%}
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="10" cols="2"></textarea><br>
+        
+        <div style = "position:absolute; left:1110px; top:365px;">
+          <button type="submit">Send</button>
+          </div>
+</form>
+</div>
+<body>
+  <div style="text-align: center;">
+  <button id="logoutbutton">Logout</button>
+  </div>
+
+<script>
+    document.getElementById("submission").addEventListener("click", function() {
+        var formData = document.getElementById("message").value;
+        
+        // Update the response-container with the form data
+        document.getElementById("response-container").textContent = formData;
+        
+    });
+</script>
+  <script>
+      document.getElementById("logoutbutton").addEventListener("click", function() {
+          window.location.href = "{% url 'logout' %}";
+      });
+  </script>
+</body>
+<div>
+  {% for chat in history %}
+
+{% if chat.role == "assistant" %}
+  <div class = "bot_message">
+    Santé
+    {{chat.content}}
+  </div>
+  <br>
+  {% else %}
+  <div style="text-align: right;">
+    You
+    {{chat.content}}
+  </div>
+
+    <br>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+</html>

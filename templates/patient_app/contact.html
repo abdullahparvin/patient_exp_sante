@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Your about page's head content here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=divice-width, initial-scale=1.0">
+    <title>Contact Us - santé</title> 
+    {% load static %}
+    <link rel="stylesheet" href= "{% static 'patient_app/style.css' %}">    
+</head>
+
+<body>
+    <div class = "container">
+        <nav>
+            <a href="/"><img src="{% static 'patient_app/logo1.png' %}" class="logo" alt="Santé Logo"></a>
+            <!-- Other navigation links can be added here if needed -->
+        <ul>
+            <li> <a href="/" >Home </a></li>
+            <li> <a href="/about" >about </a></li>
+            <li> <a href="/contact" >Contact Us</a></li>
+        </ul>
+    </nav>
+        <h1>Connect with us </h1>
+            <p>We're here to answer any questions you may have.</p>
+        
+        <!-- Contact form -->
+    <section class="contact-form">
+        <div class="form-container">
+            <h2>Your Details</h2>
+            <form action="#" method="POST">
+ 
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" required>
+ 
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" required>
+ 
+                <label for="phone">Phone: </label>
+                <input type="tel" id="phone" name="phone">
+ 
+                <label for="message">Message: </label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+ 
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </section>
+    <section class="contact-info">
+        <h2>Contact Information</h2>
+        <address>
+            sante <br>
+            Nashville, TN 37214<br>
+            Phone: <a href="phone: (615)888-18232"></a>(615)888-18232<br>
+            Email: <a href="email:info@gmail.com">info@gmailcom</a>
+        </address>
+    </section>
+ 
+   
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href= "{% static 'patient_app/style.css' %}">
+        
+</head>
+<body>
+    <div class = "container1">
+    <nav>
+        <a href="/"><img src="{% static 'patient_app/logo1.png' %}" class="logo" alt="Santé Logo"></a>
+        <!-- Other navigation links can be added here if needed -->
+    
+    <ul>
+        <li> <a href="/" >Home </a></li>
+        <li> <a href="/about" >about </a></li>
+        <li> <a href="/contact" >Contact Us</a></li>
+    </ul>
+</nav>
+    <h1>Login</h1>
+    <br> <br>
+    <p>Welcome back! 
+    </p>
+    <br> <br>
+    <br> <br>
+
+    {% if error_message %}
+    <div class="error" style="text-align: center;">{{ error_message }}</div>
+    {% endif %}
+
+    <div class="form-container">
+    <form method="post" style="text-align: center;">
+      {%csrf_token%}
+            <label for="username" style="color: blueviolet;">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required />
+    
+            <label for="password" style="color: blueviolet;">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required />
+            
+            <div style = "position:absolute; left:722px; top:470px;">
+            <button type="submit">submit</button>
+            </div>
+      </form>
+      <br> <br>
+    </div>
+    <br><br>
+      <div style="text-align: center;">
+        <p1>Don't have an account?</p1>
+        <br><br>
+        <button id="registerbutton">Register</button>
+       </div>
+      <body>
+    
+        <script>
+            document.getElementById("registerbutton").addEventListener("click", function() {
+                window.location.href = "{% url 'register' %}";
+            });
+        </script>
+      </body>
+    <!-- Your contact page content here -->
+    </div>
+</body>
+</html>

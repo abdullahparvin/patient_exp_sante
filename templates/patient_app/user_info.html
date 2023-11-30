@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href= "{% static 'patient_app/style.css' %}">  
+</head>
+<body>
+    <div class = "container1">
+    <nav>
+        <a href="/"><img src="{% static 'patient_app/logo1.png' %}" class="logo" alt="Santé Logo"></a>
+        <!-- Other navigation links can be added here if needed -->
+    
+    <ul>
+        <li> <a href="/" >Home </a></li>
+        <li> <a href="/about" >about </a></li>
+        <li> <a href="/contact" >Contact Us</a></li>
+    </ul>
+</nav>
+<h1>Health Information</h1>
+<br> <br>
+<br> <br>
+<div class="form-container">
+<form method="post" style="text-align: center;">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+
+        <label for="{{ form.name.id_for_label }}" style="color: blueviolet;">Name:</label>
+        <div>
+        {{ form.name }}
+        {{ form.name.errors }}
+        </div>
+
+    </div>
+    <div class="fieldWrapper">
+
+        <label for="{{ form.age.id_for_label }}" style="color: blueviolet;">Age:</label>
+        <div>
+        {{ form.age }}
+        {{ form.age.errors }}
+        </div>
+
+    </div>    
+    <div class="fieldWrapper">
+
+        <label for="{{ form.sex.id_for_label }}" style="color: blueviolet;">Sex:</label>
+        <div>
+        {{ form.sex }}
+        {{ form.sex.errors }}
+        </div>
+
+    </div> 
+    <div class="fieldWrapper">
+
+        <label for="{{ form.location.id_for_label }}" style="color: blueviolet;">Location:</label>
+        <div>
+        {{ form.location }}
+        {{ form.location.errors }}
+        </div>
+
+    </div>
+    <div class="fieldWrapper">
+
+        <label for="{{ form.health.id_for_label }}" style="color: blueviolet;">Health conditions:</label>
+        <div>
+        {{ form.health }}
+        {{ form.health.errors }}
+        </div>
+    </div> 
+    <div style = "position:absolute; left:722px; top:600px;">              
+        <button type="submit">submit</button>
+    </div>
+        <br><br>
+</form>
+</div>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href= "{% static 'patient_app/style.css' %}">  
+</head>
+<body>
+    <div class = "container1">
+    <nav>
+        <a href="/"><img src="{% static 'patient_app/logo1.png' %}" class="logo" alt="Santé Logo"></a>
+        <!-- Other navigation links can be added here if needed -->
+    
+    <ul>
+        <li> <a href="/" >Home </a></li>
+        <li> <a href="/about" >about </a></li>
+        <li> <a href="/contact" >Contact Us</a></li>
+    </ul>
+</nav>
+<h1>Register</h1>
+<br> <br>
+<p>Better health is only steps away! 
+</p>
+<br> <br>
+<br> <br>
+<div class="form-container">
+<form method="post" style="text-align: center;">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+
+        <label for="{{ form.username.id_for_label }}" style="color: blueviolet;">Create a Username:</label>
+        <div>
+        {{ form.username }}
+        {{ form.username.errors }}
+        </div>
+
+    </div>
+    <div class="fieldWrapper">
+       
+        <label for="{{ form.password.id_for_label }}" style="color: blueviolet;">Enter a Password:</label>
+        <div>
+            {{ form.password1 }}
+            {{ form.password1.errors }}
+        </div>
+
+    </div>
+    <div class="fieldWrapper">
+       
+        <label for="{{ form.password.id_for_label }}" style="color: blueviolet;">Reenter Password:</label>
+        <div>
+            {{ form.password2 }}
+            {{ form.password2.errors }}
+        </div>
+
+    </div>
+    <div style = "position:absolute; left:722px; top:545px;">
+        <button type="submit">submit</button>
+    </div>
+</form>
+<br> <br>
+</div>
+<br>
+<div>
+<p> Have an account?</p>
+</div>
+<body style="text-align: center;">
+  <button id="loginButton">Login</button>
+
+  <script>
+      document.getElementById("loginButton").addEventListener("click", function() {
+          window.location.href = "{% url 'login' %}";
+      });
+  </script>
+</body>
+</div>
+</html>

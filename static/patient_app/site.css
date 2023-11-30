@@ -1,0 +1,30 @@
+html {
+    background: url(dna.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+
+.message {
+    font-weight: 600;
+    color: blue;
+}
+
+.container{
+    width: 90%;
+    min-height: 100vh;
+    background-image:linear-gradient(rgba(9,0,77,0.65), rgba(9,0,77,0.65)), url(dna.jpg);
+    opacity: 0.6;
+    background-size:cover ;
+    background-position: center;
+    background: relative;
+    padding: 10px 8%;
+   /* overflow: hidden;*/
+}
+
+.white-box {
+    background: white;
+    padding: 15px;
+    border-radius: 3px;
+}
+
