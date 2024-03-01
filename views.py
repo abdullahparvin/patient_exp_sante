@@ -11,7 +11,7 @@ from django.contrib.auth import login, authenticate
 from django.template.loader import render_to_string
 import openai
 
-openai.api_key = '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'
+openai.api_key = 
 
 history = []
 
